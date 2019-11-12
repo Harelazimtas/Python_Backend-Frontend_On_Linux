@@ -1,0 +1,28 @@
+<!Doctype html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/stats.css') }}" />
+	<!-- <script src="{{ url_for('static',filename='JavaScript/stats.js') }}" type="text/javascript" /></script> -->
+</head>
+<body>
+	{% extends "layout.html" %}
+	{% block content %}
+	<div class="URLRegister">
+		<h4>Count redirection that register: {{ listStats[0] }}</h4> 
+	</div>
+	<div class="URLRedirectionPreforme">
+		<h4>Count redirection that preforme:</h4>
+		<h4>Day: {{ listStats[1] }}</h4>
+		<h4>Hour: {{ listStats[2]  }}</h4>
+		<h4>Minute: {{ listStats[3]  }}</h4>	
+	</div>
+	<div class="BadRequest">
+		<h4>Count redirection that preforme:</h4>
+		<h4>Day: {{ listStats[4] }}</h4>
+		<h4>Hour: {{ listStats[5]  }}</h4>
+		<h4>Minute: {{ listStats[6]  }}</h4>
+	</div>
+	{% endblock content %}
+</body>
+</html>

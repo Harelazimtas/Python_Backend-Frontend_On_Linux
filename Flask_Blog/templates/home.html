@@ -1,0 +1,26 @@
+
+<!Doctype html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/home.css') }}" />
+	<script src="{{ url_for('static',filename='JavaScript/home.js') }}" type="text/javascript" /></script>
+</head>
+<body>	
+	{% extends "layout.html" %}
+	{% block content %}
+	<form class="box" onsubmit=" return checkText()" action="{{ url_for('createURL') }}" method="post">
+		<h2> Create URL </h2>
+		<input type="text" name="URL" id="URL" minlength="5" required />
+		<br>
+		<input type="submit" value="Create short URL" />
+		<br>
+		<label id="errorInsert" name="errorInsert"></label>
+		<br>
+		{{ fakeurl }} 
+	</form>
+	{% endblock content %}
+</body>
+</html>
+
