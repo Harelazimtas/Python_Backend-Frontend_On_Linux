@@ -46,7 +46,7 @@ def CountRow():
 	count=cursor.fetchone()[0]
 	return str(count)
 	
-# listStats The index mean 0-count url,if redirect suucces add here: 1-day 2-hour 3-minute ,else add here : 4-day 5-hour 6-minute	
+# ListStats The index mean 0-count url,if redirect suucces add here: 1-day 2-hour 3-minute ,else add here : 4-day 5-hour 6-minute	
 def CalculateStats():
 	listStats = [0, 0, 0, 0, 0, 0, 0]
 	cuurentTime = getLocalTime()
@@ -74,14 +74,14 @@ def CalculateStats():
 
 #App.route
 
-#home page-default
+#Home page-default
 @app.route('/')
 @app.route('/home')
 def home():
     return render_template('home.html')
 
-#default for: /redirect/...
-#serach real URL in the DB, and redirect to URL.
+#Default for: /redirect/...
+#Serach real URL in the DB, and redirect to URL.
 @app.route('/redirect/<string:string_url>')	
 def redirectUrl(string_url):
 	fakeurl1="localhost:5000/redirect/"+string_url
